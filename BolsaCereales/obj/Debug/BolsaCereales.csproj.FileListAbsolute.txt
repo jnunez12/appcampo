@@ -1,0 +1,8 @@
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\BolsaCereales\bin\Debug\BolsaCereales.exe.config
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\BolsaCereales\bin\Debug\BolsaCereales.exe
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\BolsaCereales\bin\Debug\BolsaCereales.pdb
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\BolsaCereales\bin\Debug\WebDriver.dll
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\BolsaCereales\bin\Debug\WebDriver.xml
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\BolsaCereales\obj\Debug\BolsaCereales.csprojResolveAssemblyReference.cache
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\BolsaCereales\obj\Debug\BolsaCereales.exe
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\BolsaCereales\obj\Debug\BolsaCereales.pdb

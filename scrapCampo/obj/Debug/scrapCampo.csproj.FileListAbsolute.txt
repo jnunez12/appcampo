@@ -1,0 +1,14 @@
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\bin\Debug\scrapCampo.exe.config
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\bin\Debug\scrapCampo.exe
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\bin\Debug\scrapCampo.pdb
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\bin\Debug\Monedas.exe
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\bin\Debug\WebDriver.dll
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\bin\Debug\General.exe
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\bin\Debug\Monedas.pdb
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\bin\Debug\Monedas.exe.config
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\bin\Debug\WebDriver.xml
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\bin\Debug\General.pdb
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\bin\Debug\General.exe.config
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\obj\Debug\scrapCampo.csprojResolveAssemblyReference.cache
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\obj\Debug\scrapCampo.exe
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\obj\Debug\scrapCampo.pdb

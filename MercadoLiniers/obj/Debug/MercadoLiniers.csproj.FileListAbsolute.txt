@@ -1,0 +1,8 @@
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\MercadoLiniers\bin\Debug\MercadoLiniers.exe.config
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\MercadoLiniers\bin\Debug\MercadoLiniers.exe
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\MercadoLiniers\bin\Debug\MercadoLiniers.pdb
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\MercadoLiniers\bin\Debug\WebDriver.dll
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\MercadoLiniers\bin\Debug\WebDriver.xml
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\MercadoLiniers\obj\Debug\MercadoLiniers.csprojResolveAssemblyReference.cache
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\MercadoLiniers\obj\Debug\MercadoLiniers.exe
+C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\MercadoLiniers\obj\Debug\MercadoLiniers.pdb
