@@ -6,3 +6,11 @@ C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\Clima\bin\Debug\WebDriver.xml
 C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\Clima\obj\Debug\Clima.csprojResolveAssemblyReference.cache
 C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\Clima\obj\Debug\Clima.exe
 C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\Clima\obj\Debug\Clima.pdb
+D:\PROYECTOS\appcampo\Clima\bin\Debug\Clima.exe.config
+D:\PROYECTOS\appcampo\Clima\bin\Debug\Clima.exe
+D:\PROYECTOS\appcampo\Clima\bin\Debug\Clima.pdb
+D:\PROYECTOS\appcampo\Clima\bin\Debug\WebDriver.dll
+D:\PROYECTOS\appcampo\Clima\bin\Debug\WebDriver.xml
+D:\PROYECTOS\appcampo\Clima\obj\Debug\Clima.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\appcampo\Clima\obj\Debug\Clima.exe
+D:\PROYECTOS\appcampo\Clima\obj\Debug\Clima.pdb

@@ -6,3 +6,11 @@ C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\General\bin\Debug\WebDriver.xml
 C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\General\obj\Debug\General.csprojResolveAssemblyReference.cache
 C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\General\obj\Debug\General.exe
 C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\General\obj\Debug\General.pdb
+D:\PROYECTOS\appcampo\General\bin\Debug\General.exe.config
+D:\PROYECTOS\appcampo\General\bin\Debug\General.exe
+D:\PROYECTOS\appcampo\General\bin\Debug\General.pdb
+D:\PROYECTOS\appcampo\General\bin\Debug\WebDriver.dll
+D:\PROYECTOS\appcampo\General\bin\Debug\WebDriver.xml
+D:\PROYECTOS\appcampo\General\obj\Debug\General.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\appcampo\General\obj\Debug\General.exe
+D:\PROYECTOS\appcampo\General\obj\Debug\General.pdb

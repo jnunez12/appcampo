@@ -6,3 +6,11 @@ C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\BolsaCereales\bin\Debug\WebDriver.xm
 C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\BolsaCereales\obj\Debug\BolsaCereales.csprojResolveAssemblyReference.cache
 C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\BolsaCereales\obj\Debug\BolsaCereales.exe
 C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\BolsaCereales\obj\Debug\BolsaCereales.pdb
+D:\PROYECTOS\appcampo\BolsaCereales\bin\Debug\BolsaCereales.exe.config
+D:\PROYECTOS\appcampo\BolsaCereales\bin\Debug\BolsaCereales.exe
+D:\PROYECTOS\appcampo\BolsaCereales\bin\Debug\BolsaCereales.pdb
+D:\PROYECTOS\appcampo\BolsaCereales\bin\Debug\WebDriver.dll
+D:\PROYECTOS\appcampo\BolsaCereales\bin\Debug\WebDriver.xml
+D:\PROYECTOS\appcampo\BolsaCereales\obj\Debug\BolsaCereales.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\appcampo\BolsaCereales\obj\Debug\BolsaCereales.exe
+D:\PROYECTOS\appcampo\BolsaCereales\obj\Debug\BolsaCereales.pdb

@@ -56,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MercadoLiniers\MercadoLiniers.csproj">
+      <Project>{1eb3e663-ad0f-45eb-827d-0e065234facc}</Project>
+      <Name>MercadoLiniers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Monedas\Monedas.csproj">
       <Project>{cf17355e-ee50-41ed-bce4-4ee775a27ca7}</Project>
       <Name>Monedas</Name>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Monedas;
+using MercadoLiniers;
 
 namespace scrapCampo
 {
@@ -11,7 +12,9 @@ namespace scrapCampo
     {
         static void Main(string[] args)
         {
-            Monedas.Program.Monedas();
+
+            MercadoLiniers.Program.scrapCategorias();
+            //Monedas.Program.Monedas();
             
         }
     }
