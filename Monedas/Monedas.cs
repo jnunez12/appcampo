@@ -37,7 +37,7 @@ namespace Monedas
             {
                 try
                 {
-                    driver = General.SeleniumUtility.iniciarDriver(driver, "firefox");
+                    driver = global::General.SeleniumUtility.iniciarDriver(driver, "firefox");
                     driver.Navigate().GoToUrl("http://www.dolarhoy.com");
                     success = true;
                 }
@@ -54,6 +54,8 @@ namespace Monedas
             dolar = Dolar.scrapDolar(driver, dolar);
 
             lista.Add(dolar);
+
+            lista = General.scrapMonedas(driver, lista);
 
             driver.Quit();
 

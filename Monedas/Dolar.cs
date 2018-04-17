@@ -21,6 +21,7 @@ namespace Monedas
             moneda.id = 1; // DANJO...
             moneda.nombre = "dolar estadounidense";
             moneda.simbolo = "U$S";
+            moneda.cod_iso = "USD";
 
             string fecha_actualizacion = driver.FindElement(By.XPath("/html/body/div[12]/center/table/tbody/tr[1]/td[2]/table/tbody/tr[1]/td/font/b")).Text;
             moneda.dateUpdate = Convert.ToDateTime(fecha_actualizacion.Substring(fecha_actualizacion.IndexOf("/") - 3));
