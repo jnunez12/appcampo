@@ -20,7 +20,7 @@ namespace MercadoLiniers
         {
         }
 
-        public static List<Entidades.Categoria> scrapCategorias()
+        public static Entidades.TablaMercado scrapMercado()
         {
             #region Iniciar driver
             IWebDriver driver = null;
@@ -40,11 +40,13 @@ namespace MercadoLiniers
             }
             #endregion
 
-            List<Entidades.Categoria> lista = new List<Entidades.Categoria>();
+            Entidades.TablaMercado tabla = new Entidades.TablaMercado();
 
-            lista = Scrap.scrapTablaHacienda.scrapTabla(driver, lista);
+            tabla = Scrap.scrapTablaHacienda.scrapTablaMercados(driver, tabla);
 
-            return lista;
+            driver.Quit();
+
+            return tabla;
         }
     }
 }

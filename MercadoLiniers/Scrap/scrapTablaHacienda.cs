@@ -11,9 +11,21 @@ namespace MercadoLiniers.Scrap
 {
     public static class scrapTablaHacienda
     {
-
-        public static List<Entidades.Categoria> scrapTabla(IWebDriver driver, List<Entidades.Categoria> lista)
+        public static Entidades.TablaMercado scrapTablaMercados(IWebDriver driver, Entidades.TablaMercado tabla)
         {
+            IWebElement dateinicial = driver.FindElement(By.XPath("//*[@id='datepicker1']"));
+            tabla.fechainicial = Convert.ToDateTime(dateinicial.GetAttribute("value"));
+            IWebElement datefinal = driver.FindElement(By.XPath("//*[@id='datepicker2']"));
+            tabla.fechafinal = Convert.ToDateTime(datefinal.GetAttribute("value"));
+
+            tabla.categorias = scrapCategorias(driver);
+
+            return tabla;
+        }
+
+        public static List<Entidades.Categoria> scrapCategorias(IWebDriver driver)
+        {
+            List<Entidades.Categoria> lista = new List<Entidades.Categoria>();
 
             IList<IWebElement> listatr = driver.FindElements(By.XPath("/html/body/table/tbody/tr[1]/td/table[2]/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr"));
             int id = 1;

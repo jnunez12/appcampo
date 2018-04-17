@@ -13,8 +13,8 @@ namespace scrapCampo
     {
         static void Main(string[] args)
         {
-            List<MercadoLiniers.Entidades.Categoria> mercadoliniers = new List<MercadoLiniers.Entidades.Categoria>();
-            mercadoliniers = MercadoLiniers.Program.scrapCategorias();
+            MercadoLiniers.Entidades.TablaMercado mercadoliniers = new MercadoLiniers.Entidades.TablaMercado();
+            mercadoliniers = MercadoLiniers.Program.scrapMercado();
 
 
             var json = new JavaScriptSerializer().Serialize(mercadoliniers);

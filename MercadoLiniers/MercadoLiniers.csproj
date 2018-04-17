@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Item.cs" />
+    <Compile Include="Entidades\TablaMercado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scrap\scrapTablaHacienda.cs" />
