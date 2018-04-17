@@ -20,3 +20,14 @@ D:\PROYECTOS\appcampo\Monedas\bin\Debug\WebDriver.xml
 D:\PROYECTOS\appcampo\Monedas\obj\Debug\Monedas.csprojResolveAssemblyReference.cache
 D:\PROYECTOS\appcampo\Monedas\obj\Debug\Monedas.exe
 D:\PROYECTOS\appcampo\Monedas\obj\Debug\Monedas.pdb
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\Monedas\bin\Debug\Monedas.exe.config
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\Monedas\bin\Debug\Monedas.exe
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\Monedas\bin\Debug\Monedas.pdb
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\Monedas\bin\Debug\General.exe
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\Monedas\bin\Debug\WebDriver.dll
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\Monedas\bin\Debug\General.pdb
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\Monedas\bin\Debug\General.exe.config
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\Monedas\bin\Debug\WebDriver.xml
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\Monedas\obj\Debug\Monedas.csprojResolveAssemblyReference.cache
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\Monedas\obj\Debug\Monedas.exe
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\Monedas\obj\Debug\Monedas.pdb

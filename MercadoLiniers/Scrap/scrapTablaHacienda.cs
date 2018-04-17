@@ -16,32 +16,108 @@ namespace MercadoLiniers.Scrap
         {
 
             IList<IWebElement> listatr = driver.FindElements(By.XPath("/html/body/table/tbody/tr[1]/td/table[2]/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr"));
-
+            int id = 1;
             foreach (IWebElement tr in listatr)
             {
                 Entidades.Categoria categoria = new Entidades.Categoria();
+                categoria.id = id;
 
+                // obtenemos el nombre de la categoria
                 try
                 {
-                    categoria.nombre = tr.FindElement(By.XPath("./td[1]")).Text;
+                    categoria.nombre = tr.FindElement(By.XPath(".//td[1]")).Text;
                 }
                 catch (Exception e)
                 {
                     continue;
                 }
 
-                if(categoria.nombre == "")
+                if(categoria.nombre == "" || categoria.nombre.Trim() == "Totales")
                 {
                     continue;
                 }
 
-                //DANJO... obtener items
-                lista.Add(categoria);
+                // obtenemos los valores
+                var retorno = scrapValores(tr);
+                categoria.precios = retorno.Item1;
+                categoria.totales = retorno.Item2;
+                categoria.promedio = retorno.Item3;
 
-                
+                lista.Add(categoria);
+                id++;
             }
 
             return lista;
+        }
+
+        public static Tuple<List<Entidades.Item>, List<Entidades.Item>, List<Entidades.Item>> scrapValores(IWebElement tr)
+        {
+            List<Entidades.Item> precios = new List<Entidades.Item>();
+            List<Entidades.Item> totales = new List<Entidades.Item>();
+            List<Entidades.Item> promedio = new List<Entidades.Item>();
+
+            IList<IWebElement> listaitems = tr.FindElements(By.XPath(".//td"));
+            int cantidaditems = listaitems.Count;
+
+            for(int i = 2; i<=cantidaditems; i++)
+            {
+                string txtvalor = tr.FindElement(By.XPath(".//td["+i+"]")).Text.Replace("$","");
+                double valor = Convert.ToDouble(txtvalor);
+                Entidades.Item item = new Entidades.Item();
+                item.id = i-1;
+                item.tipo = tipoValores(i);
+                item.valor = valor;
+                if (i <= 5)
+                {
+                    precios.Add(item);
+                }else if(i > 5 & i <= 8)
+                {
+                    totales.Add(item);
+                }
+                else
+                {
+                    promedio.Add(item);
+                }
+            }
+
+            return Tuple.Create(precios, totales, promedio);
+
+        }
+
+        public static string tipoValores(int indice)
+        {
+            string retorno = "";
+            switch (indice)
+            {
+                case 2:
+                    retorno = "minimo";
+                    break;
+                case 3:
+                    retorno = "maximo";
+                    break;
+                case 4:
+                    retorno = "promedio";
+                    break;
+                case 5:
+                    retorno = "mediana";
+                    break;
+                case 6:
+                    retorno = "cabezas";
+                    break;
+                case 7:
+                    retorno = "importe";
+                    break;
+                case 8:
+                    retorno = "kgs";
+                    break;
+                case 9:
+                    retorno = "kgs";
+                    break;
+                default:
+                    retorno = "";
+                    break;
+            }
+            return retorno;
         }
     }
 }

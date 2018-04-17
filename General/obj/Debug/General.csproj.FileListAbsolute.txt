@@ -14,3 +14,11 @@ D:\PROYECTOS\appcampo\General\bin\Debug\WebDriver.xml
 D:\PROYECTOS\appcampo\General\obj\Debug\General.csprojResolveAssemblyReference.cache
 D:\PROYECTOS\appcampo\General\obj\Debug\General.exe
 D:\PROYECTOS\appcampo\General\obj\Debug\General.pdb
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\General\bin\Debug\General.exe.config
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\General\bin\Debug\General.exe
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\General\bin\Debug\General.pdb
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\General\bin\Debug\WebDriver.dll
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\General\bin\Debug\WebDriver.xml
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\General\obj\Debug\General.csprojResolveAssemblyReference.cache
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\General\obj\Debug\General.exe
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\General\obj\Debug\General.pdb
