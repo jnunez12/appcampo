@@ -13,13 +13,23 @@ namespace scrapCampo
     {
         static void Main(string[] args)
         {
-            MercadoLiniers.Entidades.TablaMercado mercadoliniers = new MercadoLiniers.Entidades.TablaMercado();
-            mercadoliniers = MercadoLiniers.Program.scrapMercado();
+            #region Mercado de liniers
+            //MercadoLiniers.Entidades.TablaMercado mercadoliniers = new MercadoLiniers.Entidades.TablaMercado();
+            //mercadoliniers = MercadoLiniers.Program.scrapMercado();
 
 
-            var json = new JavaScriptSerializer().Serialize(mercadoliniers);
-            System.IO.File.WriteAllText(@"C:\Users\jonat\Desktop\PROYECTOS\appcampo\scrapCampo\mercadoliniers.json", json);
-            //Monedas.Program.Monedas();
+            //var json = new JavaScriptSerializer().Serialize(mercadoliniers);
+            //System.IO.File.WriteAllText(@"C:\Users\jonat\Desktop\PROYECTOS\appcampo\scrapCampo\mercadoliniers.json", json);
+            #endregion
+
+            #region Monedas
+
+            #endregion
+            List<Monedas.Entidades.Moneda> monedas = new List<Monedas.Entidades.Moneda>();
+            monedas = Monedas.Monedas.scrapMonedas(monedas);
+            var json = new JavaScriptSerializer().Serialize(monedas);
+            System.IO.File.WriteAllText(@"D:\PROYECTOS\appcampo\scrapCampo\monedas.json", json);
+
             string a = "A";
         }
     }

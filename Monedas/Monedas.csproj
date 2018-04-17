@@ -52,7 +52,7 @@
     <Compile Include="Dolar.cs" />
     <Compile Include="Entidades\Moneda.cs" />
     <Compile Include="Entidades\Precio.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Monedas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

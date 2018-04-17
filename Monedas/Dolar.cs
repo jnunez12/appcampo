@@ -16,11 +16,10 @@ namespace Monedas
         /// Scrapea los datos de Dólar
         /// </summary>
         /// <param name="driver"></param>
-        public static void scrapDolar(IWebDriver driver)
+        public static Entidades.Moneda scrapDolar(IWebDriver driver, Entidades.Moneda moneda)
         {
-            Entidades.Moneda moneda = new Entidades.Moneda();
             moneda.id = 1; // DANJO...
-            moneda.nombre = "dolar";
+            moneda.nombre = "dolar estadounidense";
             moneda.simbolo = "U$S";
 
             string fecha_actualizacion = driver.FindElement(By.XPath("/html/body/div[12]/center/table/tbody/tr[1]/td[2]/table/tbody/tr[1]/td/font/b")).Text;
@@ -44,9 +43,27 @@ namespace Monedas
                 }
             }
 
-            var json = new JavaScriptSerializer().Serialize(moneda);
-            System.IO.File.WriteAllText(@"C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\dolar.json", json);
-            string b = "";
+            // precio promedio
+            Entidades.Precio promedio = new Entidades.Precio();
+            promedio.id = id;
+            id++;
+            promedio.tipo = "promedio";
+            promedio.compra = Convert.ToDouble(driver.FindElement(By.XPath("//*[@id='AutoNumber1']/tbody/tr[1]/td[2]/table/tbody/tr[4]/td[2]/b/font")).Text.Replace(".",","));
+            promedio.venta = Convert.ToDouble(driver.FindElement(By.XPath("//*[@id='AutoNumber1']/tbody/tr[1]/td[2]/table/tbody/tr[4]/td[3]/b/font")).Text.Replace(".", ","));
+            moneda.listaPrecios.Add(promedio);
+
+            // mejores precios
+            Entidades.Precio mejores = new Entidades.Precio();
+            mejores.id = id;
+            mejores.tipo = "mejores";
+            mejores.compra = Convert.ToDouble(driver.FindElement(By.XPath("//*[@id='AutoNumber1']/tbody/tr[1]/td[2]/table/tbody/tr[4]/td[5]/b/font")).Text.Replace(".", ","));
+            mejores.venta = Convert.ToDouble(driver.FindElement(By.XPath("//*[@id='AutoNumber1']/tbody/tr[1]/td[2]/table/tbody/tr[4]/td[6]/b/font")).Text.Replace(".", ","));
+            moneda.listaPrecios.Add(mejores);
+
+            //var json = new JavaScriptSerializer().Serialize(moneda);
+            //System.IO.File.WriteAllText(@"C:\Users\jonat\Desktop\PROYECTOS\scrapCampo\scrapCampo\dolar.json", json);
+
+            return moneda;
         }
 
         /// <summary>

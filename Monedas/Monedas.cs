@@ -10,7 +10,7 @@ using General;
 
 namespace Monedas
 {
-    public class Program
+    public class Monedas
     {
         #region Variables Globales"
         static bool success = false;
@@ -23,7 +23,13 @@ namespace Monedas
         {
 
         }
-        public static void Monedas()
+
+        /// <summary>
+        /// Scrapea todas las monedas y las retorna como lista
+        /// </summary>
+        /// <param name="lista"></param>
+        /// <returns></returns>
+        public static List<Entidades.Moneda> scrapMonedas(List<Entidades.Moneda> lista)
         {
             #region Iniciar driver
             IWebDriver driver = null;
@@ -44,9 +50,14 @@ namespace Monedas
             #endregion
 
             driver.FindElement(By.XPath("//*[@id='table2']/tbody/tr[2]/td[1]/font/span/a")).Click();
-            Dolar.scrapDolar(driver);
-            string a = "a";
+            Entidades.Moneda dolar = new Entidades.Moneda();
+            dolar = Dolar.scrapDolar(driver, dolar);
 
+            lista.Add(dolar);
+
+            driver.Quit();
+
+            return lista;
         }
     }
 }
