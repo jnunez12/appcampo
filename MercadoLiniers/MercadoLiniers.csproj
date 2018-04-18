@@ -49,11 +49,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\Categoria.cs" />
+    <Compile Include="Entidades\Consignatario.cs" />
     <Compile Include="Entidades\Item.cs" />
+    <Compile Include="Entidades\ItemVenta.cs" />
     <Compile Include="Entidades\TablaMercado.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Entidades\Venta.cs" />
+    <Compile Include="MercadoLiniers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scrap\scrapTablaHacienda.cs" />
+    <Compile Include="Scrap\scrapVentas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

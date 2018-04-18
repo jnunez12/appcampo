@@ -9,10 +9,38 @@ using General;
 
 namespace MercadoLiniers.Scrap
 {
+
+    
     public static class scrapTablaHacienda
     {
-        public static Entidades.TablaMercado scrapTablaMercados(IWebDriver driver, Entidades.TablaMercado tabla)
+        static bool success = false;
+        static int retry = 5;
+        /// <summary>
+        /// Scrapea la tabla que tiene los precios por categorías
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="tabla"></param>
+        /// <returns></returns>
+        public static Entidades.TablaMercado scrapTablaMercados(Entidades.TablaMercado tabla)
         {
+            #region Iniciar driver
+            IWebDriver driver = null;
+            while (!success & retry > 0)
+            {
+                try
+                {
+                    driver = General.SeleniumUtility.iniciarDriver(driver, "firefox");
+                    driver.Navigate().GoToUrl("http://www.mercadodeliniers.com.ar/dll/hacienda1.dll/haciinfo000002");
+                    success = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("MONEDA: Error al iniciar el driver");
+                    retry--;
+                }
+            }
+            #endregion
+
             IWebElement dateinicial = driver.FindElement(By.XPath("//*[@id='datepicker1']"));
             tabla.fechainicial = Convert.ToDateTime(dateinicial.GetAttribute("value"));
             IWebElement datefinal = driver.FindElement(By.XPath("//*[@id='datepicker2']"));
@@ -20,9 +48,16 @@ namespace MercadoLiniers.Scrap
 
             tabla.categorias = scrapCategorias(driver);
 
+            driver.Quit();
+
             return tabla;
         }
 
+        /// <summary>
+        /// Scrapea cada fila de la tabla (categoría)
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <returns></returns>
         public static List<Entidades.Categoria> scrapCategorias(IWebDriver driver)
         {
             List<Entidades.Categoria> lista = new List<Entidades.Categoria>();
@@ -62,6 +97,12 @@ namespace MercadoLiniers.Scrap
             return lista;
         }
 
+
+        /// <summary>
+        /// Scrapea los valores de cada categoría
+        /// </summary>
+        /// <param name="tr"></param>
+        /// <returns></returns>
         public static Tuple<List<Entidades.Item>, List<Entidades.Item>, List<Entidades.Item>> scrapValores(IWebElement tr)
         {
             List<Entidades.Item> precios = new List<Entidades.Item>();
@@ -96,6 +137,11 @@ namespace MercadoLiniers.Scrap
 
         }
 
+        /// <summary>
+        /// Dvuelve un string con el tipo de valor según un índice
+        /// </summary>
+        /// <param name="indice"></param>
+        /// <returns></returns>
         public static string tipoValores(int indice)
         {
             string retorno = "";
@@ -132,4 +178,8 @@ namespace MercadoLiniers.Scrap
             return retorno;
         }
     }
+
+
+
+
 }
