@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace BolsaCereales
 {
-    class Program
+    public class BolsaCereales
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
