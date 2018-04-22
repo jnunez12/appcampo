@@ -48,10 +48,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entidades\Cereal.cs" />
+    <Compile Include="Entidades\CerealComun.cs" />
+    <Compile Include="Entidades\ItemCBOT.cs" />
     <Compile Include="Entidades\ItemDisponible.cs" />
+    <Compile Include="Entidades\ItemFOBMAGyP.cs" />
+    <Compile Include="Entidades\ItemFuturoMATba.cs" />
+    <Compile Include="Entidades\ItemPreciosMAGyP.cs" />
+    <Compile Include="Entidades\Mercado.cs" />
+    <Compile Include="Entidades\MercadoCBOT.cs" />
     <Compile Include="Entidades\MercadoDisponible.cs" />
     <Compile Include="BolsaCereales.cs" />
+    <Compile Include="Entidades\MercadoFOBMAGyP.cs" />
+    <Compile Include="Entidades\MercadoFuturosMATba.cs" />
+    <Compile Include="Entidades\MercadoPreciosMAGyP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scrap\scrapCereales.cs" />
   </ItemGroup>

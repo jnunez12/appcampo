@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace BolsaCereales.Entidades
 {
-    public class Cereal
+    public class MercadoFuturosMATba
     {
         public int id { get; set; }
         public string nombre { get; set; }
-        public DateTime fechadato { get; set; }
-        
-
+        public List<Entidades.ItemFuturoMATba> items { get; set; }
     }
 }

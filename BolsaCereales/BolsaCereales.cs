@@ -12,5 +12,14 @@ namespace BolsaCereales
         {
 
         }
+
+        public static List<Entidades.CerealComun> scrapCereales()
+        {
+            List<Entidades.CerealComun> cereales = new List<Entidades.CerealComun>();
+
+            cereales = Scrap.scrapCereales.loopCereales(cereales);
+
+            return cereales;
+        }
     }
 }

@@ -57,6 +57,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BolsaCereales\BolsaCereales.csproj">
+      <Project>{09d34ae2-940a-43c1-bafe-3c81377cb045}</Project>
+      <Name>BolsaCereales</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MercadoLiniers\MercadoLiniers.csproj">
       <Project>{1eb3e663-ad0f-45eb-827d-0e065234facc}</Project>
       <Name>MercadoLiniers</Name>
