@@ -11,5 +11,10 @@ namespace BolsaCereales.Entidades
         public int id { get; set; }
         public string nombre { get; set; }
         public List<Entidades.ItemDisponible> items { get; set; }
+
+        public MercadoDisponible()
+        {
+            items = new List<ItemDisponible>();
+        }
     }
 }

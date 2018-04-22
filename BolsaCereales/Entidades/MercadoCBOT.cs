@@ -11,5 +11,10 @@ namespace BolsaCereales.Entidades
         public int id { get; set; }
         public string nombre { get; set; }
         public List<Entidades.ItemCBOT> items { get; set; }
+
+        public MercadoCBOT()
+        {
+            items = new List<ItemCBOT>();
+        }
     }
 }

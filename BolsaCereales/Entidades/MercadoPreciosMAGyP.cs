@@ -11,5 +11,11 @@ namespace BolsaCereales.Entidades
         public int id { get; set; }
         public string nombre { get; set; }
         public List<Entidades.ItemPreciosMAGyP> items { get; set; }
+
+        public MercadoPreciosMAGyP()
+        {
+            items = new List<ItemPreciosMAGyP>();
+        }
     }
+
 }

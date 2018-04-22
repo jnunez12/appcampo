@@ -61,14 +61,14 @@ namespace BolsaCereales.Scrap
         public static Entidades.CerealComun scrapMercados(IWebDriver driver, IWebElement cerealweb, Entidades.CerealComun cereal)
         {
             int countmercado = 1;
-            IList<IWebElement> mercadosweb = cerealweb.FindElements(By.XPath(".//div"));
+            IList<IWebElement> mercadosweb = driver.FindElements(By.XPath("//html//div[@id='flash-cotiz-tab']/div/div/div"));
             foreach(IWebElement mercadoweb in mercadosweb)
             {
                 string nombremercado = mercadoweb.Text.ToUpper();
                 switch (nombremercado)
                 {
                     case "DISPONIBLE":
-                        cereal.disponible = scrapMercadoDisponible(driver, cerealweb, countmercado, );
+                        cereal.disponible = scrapMercadoDisponible(driver, cerealweb, countmercado);
                         break;
                     case "FUTUROS MATBA":
                         cereal.futuros_matba = scrapMercadoFuturosMATba(driver, cerealweb, countmercado);
@@ -96,16 +96,24 @@ namespace BolsaCereales.Scrap
         {
             int id = 1;
             Entidades.MercadoPreciosMAGyP mercado = new Entidades.MercadoPreciosMAGyP();
-            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath(".//table[" + countmercado + "/tbody/tr"));
+            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath(".//table[" + countmercado + "]/tbody/tr"));
             foreach (IWebElement tr in listatr)
             {
                 Entidades.ItemPreciosMAGyP item = new Entidades.ItemPreciosMAGyP();
                 item.id = id;
-                item.resol_42_07 = tr.FindElement(By.XPath(".//td[1]/a")).Text;
+                try
+                {
+                    item.resol_42_07 = tr.FindElement(By.XPath(".//td[1]/a")).Text;
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
                 item.precio = Convert.ToDouble(tr.FindElement(By.XPath(".//td[2]")).Text.Replace(".", ","));
-                item.var = parseVar(tr.FindElement(By.XPath(".//td[3]")).GetAttribute("src"));
+                item.var = parseVar(tr.FindElement(By.XPath(".//td[3]/img")).GetAttribute("src"));
                 item.fecha = Convert.ToDateTime(tr.FindElement(By.XPath(".//td[4]")).Text);
                 mercado.items.Add(item);
+                id++;
             }
 
             return mercado;
@@ -115,16 +123,25 @@ namespace BolsaCereales.Scrap
         {
             int id = 1;
             Entidades.MercadoCBOT mercado = new Entidades.MercadoCBOT();
-            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath(".//table[" + countmercado + "/tbody/tr"));
+            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath(".//table[" + countmercado + "]/tbody/tr"));
             foreach (IWebElement tr in listatr)
             {
                 Entidades.ItemCBOT item = new Entidades.ItemCBOT();
                 item.id = id;
-                item.posicion = tr.FindElement(By.XPath(".//td[1]/a")).Text;
+                try
+                {
+                    item.posicion = tr.FindElement(By.XPath(".//td[1]/a")).Text;
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+                
                 item.precio = Convert.ToDouble(tr.FindElement(By.XPath(".//td[2]")).Text.Replace(".", ","));
-                item.var = parseVar(tr.FindElement(By.XPath(".//td[3]")).GetAttribute("src"));
+                item.var = parseVar(tr.FindElement(By.XPath(".//td[3]/img")).GetAttribute("src"));
                 item.fecha = Convert.ToDateTime(tr.FindElement(By.XPath(".//td[4]")).Text);
                 mercado.items.Add(item);
+                id++;
             }
 
             return mercado;
@@ -134,16 +151,25 @@ namespace BolsaCereales.Scrap
         {
             int id = 1;
             Entidades.MercadoFOBMAGyP mercado = new Entidades.MercadoFOBMAGyP();
-            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath(".//table[" + countmercado + "/tbody/tr"));
+            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath(".//table[" + countmercado + "]/tbody/tr"));
             foreach (IWebElement tr in listatr)
             {
                 Entidades.ItemFOBMAGyP item = new Entidades.ItemFOBMAGyP();
                 item.id = id;
-                item.embarque = tr.FindElement(By.XPath(".//td[1]/a")).Text;
+                try
+                {
+                    item.embarque = tr.FindElement(By.XPath(".//td[1]/a")).Text;
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+                
                 item.precio = Convert.ToDouble(tr.FindElement(By.XPath(".//td[2]")).Text.Replace(".", ","));
-                item.var = parseVar(tr.FindElement(By.XPath(".//td[3]")).GetAttribute("src"));
+                item.var = parseVar(tr.FindElement(By.XPath(".//td[3]/img")).GetAttribute("src"));
                 item.fecha = Convert.ToDateTime(tr.FindElement(By.XPath(".//td[4]")).Text);
                 mercado.items.Add(item);
+                id++;
             }
 
             return mercado;
@@ -153,16 +179,25 @@ namespace BolsaCereales.Scrap
         {
             int id = 1;
             Entidades.MercadoFuturosMATba mercado = new Entidades.MercadoFuturosMATba();
-            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath(".//table[" + countmercado + "/tbody/tr"));
+            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath(".//table[" + countmercado + "]/tbody/tr"));
             foreach (IWebElement tr in listatr)
             {
                 Entidades.ItemFuturoMATba item = new Entidades.ItemFuturoMATba();
                 item.id = id;
-                item.posicion = tr.FindElement(By.XPath(".//td[1]/a")).Text;
+                try
+                {
+                    item.posicion = tr.FindElement(By.XPath(".//td[1]/a")).Text;
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+                
                 item.precio = Convert.ToDouble(tr.FindElement(By.XPath(".//td[2]")).Text.Replace(".", ","));
-                item.var = parseVar(tr.FindElement(By.XPath(".//td[3]")).GetAttribute("src"));
+                item.var = parseVar(tr.FindElement(By.XPath(".//td[3]/img")).GetAttribute("src"));
                 item.fecha = Convert.ToDateTime(tr.FindElement(By.XPath(".//td[4]")).Text);
                 mercado.items.Add(item);
+                id++;
             }
 
             return mercado;
@@ -172,16 +207,25 @@ namespace BolsaCereales.Scrap
         {
             int id = 1;
             Entidades.MercadoDisponible mercado = new Entidades.MercadoDisponible();
-            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath(".//table[" + countmercado + "/tbody/tr"));
+            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath("//html//div[@id='flash-cotiz-tab']/div[1]/div/table[" + countmercado + "]/tbody/tr"));
             foreach(IWebElement tr in listatr)
             {
                 Entidades.ItemDisponible item = new Entidades.ItemDisponible();
                 item.id = id;
-                item.mercado = tr.FindElement(By.XPath(".//td[1]/a")).Text;
+                try
+                {
+                    item.mercado = tr.FindElement(By.XPath(".//td[1]/a")).Text;
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+                
                 item.precio =  Convert.ToDouble(tr.FindElement(By.XPath(".//td[2]")).Text.Replace(".",","));
-                item.var = parseVar(tr.FindElement(By.XPath(".//td[3]")).GetAttribute("src"));
+                item.var = parseVar(tr.FindElement(By.XPath(".//td[3]/img")).GetAttribute("src"));
                 item.fecha = Convert.ToDateTime(tr.FindElement(By.XPath(".//td[4]")).Text);
                 mercado.items.Add(item);
+                id++;
             }
 
             return mercado;

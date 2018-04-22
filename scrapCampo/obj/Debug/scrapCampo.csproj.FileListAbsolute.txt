@@ -46,3 +46,6 @@ C:\Users\jonat\Desktop\PROYECTOS\appcampo\scrapCampo\bin\Debug\General.exe.confi
 C:\Users\jonat\Desktop\PROYECTOS\appcampo\scrapCampo\obj\Debug\scrapCampo.csprojResolveAssemblyReference.cache
 C:\Users\jonat\Desktop\PROYECTOS\appcampo\scrapCampo\obj\Debug\scrapCampo.exe
 C:\Users\jonat\Desktop\PROYECTOS\appcampo\scrapCampo\obj\Debug\scrapCampo.pdb
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\scrapCampo\bin\Debug\BolsaCereales.exe
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\scrapCampo\bin\Debug\BolsaCereales.pdb
+C:\Users\jonat\Desktop\PROYECTOS\appcampo\scrapCampo\bin\Debug\BolsaCereales.exe.config
