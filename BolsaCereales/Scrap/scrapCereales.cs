@@ -38,19 +38,20 @@ namespace BolsaCereales.Scrap
             #endregion
 
             string fechadato = driver.FindElement(By.XPath("//*[@id='flash-cotiz']/p/strong")).Text;
-
+            int id = 1;
             IList<IWebElement> cerealesweb = driver.FindElements(By.XPath("//*[@id='flash-cotiz-tab']/ul/li"));
 
             foreach(IWebElement cerealweb in cerealesweb)
             {
                 Entidades.CerealComun cereal = new Entidades.CerealComun();
-                cereal.id = 1;
+                cereal.id = id;
                 cereal.fechadato = Convert.ToDateTime(fechadato);
-                cereal.nombre = cerealweb.Text;
+                cereal.nombre = cerealweb.FindElement(By.XPath(".//a")).Text;
 
                 cereal = scrapMercados(driver, cerealweb, cereal);
 
                 lista.Add(cereal);
+                id++;
             }
 
             driver.Quit();
@@ -69,18 +70,28 @@ namespace BolsaCereales.Scrap
                 {
                     case "DISPONIBLE":
                         cereal.disponible = scrapMercadoDisponible(driver, cerealweb, countmercado);
+                        cereal.disponible.nombre = "Disponible";
+                        cereal.disponible.id = countmercado;
                         break;
                     case "FUTUROS MATBA":
                         cereal.futuros_matba = scrapMercadoFuturosMATba(driver, cerealweb, countmercado);
+                        cereal.futuros_matba.nombre = "Futuros MATba";
+                        cereal.futuros_matba.id = countmercado;
                         break;
                     case "FOB MAGYP":
                         cereal.fob_magyp = scrapMercadoFOBMAGyP(driver, cerealweb, countmercado);
+                        cereal.fob_magyp.nombre = "FOB MAGyP";
+                        cereal.fob_magyp.id = countmercado;
                         break;
                     case "CBOT":
                         cereal.cbot = scrapMercadoCBOT(driver, cerealweb, countmercado);
+                        cereal.cbot.nombre = "CBOT";
+                        cereal.cbot.id = countmercado;
                         break;
                     case "PRECIOS MAGYP":
                         cereal.precios_magyp = scrapMercadoPreciosMAGyP(driver, cerealweb, countmercado);
+                        cereal.precios_magyp.nombre = "Precios MAGyP";
+                        cereal.precios_magyp.id = countmercado;
                         break;
                     default:
                         break;
@@ -96,7 +107,7 @@ namespace BolsaCereales.Scrap
         {
             int id = 1;
             Entidades.MercadoPreciosMAGyP mercado = new Entidades.MercadoPreciosMAGyP();
-            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath(".//table[" + countmercado + "]/tbody/tr"));
+            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath("//html//div[@id='flash-cotiz-tab']/div[1]/div/table[" + countmercado + "]/tbody/tr"));
             foreach (IWebElement tr in listatr)
             {
                 Entidades.ItemPreciosMAGyP item = new Entidades.ItemPreciosMAGyP();
@@ -123,7 +134,7 @@ namespace BolsaCereales.Scrap
         {
             int id = 1;
             Entidades.MercadoCBOT mercado = new Entidades.MercadoCBOT();
-            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath(".//table[" + countmercado + "]/tbody/tr"));
+            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath("//html//div[@id='flash-cotiz-tab']/div[1]/div/table[" + countmercado + "]/tbody/tr"));
             foreach (IWebElement tr in listatr)
             {
                 Entidades.ItemCBOT item = new Entidades.ItemCBOT();
@@ -151,7 +162,7 @@ namespace BolsaCereales.Scrap
         {
             int id = 1;
             Entidades.MercadoFOBMAGyP mercado = new Entidades.MercadoFOBMAGyP();
-            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath(".//table[" + countmercado + "]/tbody/tr"));
+            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath("//html//div[@id='flash-cotiz-tab']/div[1]/div/table[" + countmercado + "]/tbody/tr"));
             foreach (IWebElement tr in listatr)
             {
                 Entidades.ItemFOBMAGyP item = new Entidades.ItemFOBMAGyP();
@@ -179,7 +190,7 @@ namespace BolsaCereales.Scrap
         {
             int id = 1;
             Entidades.MercadoFuturosMATba mercado = new Entidades.MercadoFuturosMATba();
-            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath(".//table[" + countmercado + "]/tbody/tr"));
+            IList<IWebElement> listatr = cerealweb.FindElements(By.XPath("//html//div[@id='flash-cotiz-tab']/div[1]/div/table[" + countmercado + "]/tbody/tr"));
             foreach (IWebElement tr in listatr)
             {
                 Entidades.ItemFuturoMATba item = new Entidades.ItemFuturoMATba();
